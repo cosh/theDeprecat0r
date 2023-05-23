@@ -55,9 +55,11 @@ namespace theDeprecat0r
                         Console.WriteLine("No distribution group principals were found on this cluster.");
                     }
 
-                    if(result.TenantsNotChecked.Count > 0)
+                    Console.WriteLine();
+
+                    if (result.TenantsNotChecked.Count > 0)
                     {
-                        Console.WriteLine("Please execute this command again using an identity of the following tenants:");
+                        Console.WriteLine("Groups of other tenants were found. Please execute this command again using an identity of the following tenants:");
                         foreach(var aTenant in result.TenantsNotChecked) 
                         { 
                             Console.WriteLine(aTenant); 
