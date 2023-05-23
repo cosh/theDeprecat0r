@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "theDeprecat0r": {
+      "commandName": "Project",
+      "commandLineArgs": "help.kusto.windows.net"
+    }
+  }
+}
