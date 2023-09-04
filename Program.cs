@@ -105,7 +105,7 @@ namespace theDeprecat0r
                     while (databasesResult.Read())
                     {
                         var database = databasesResult.GetString(0);
-                        queryForPrincipals = $".show database {database} principals | project PrincipalFQN, PrincipalDisplayName | parse-where PrincipalFQN with principalType:string \"=\" principalIdentity:string \";\" principalTenant:string | project-away PrincipalFQN | where principalType == \"aadgroup\" | project-away principalType";
+                        queryForPrincipals = $".show database ['{database}'] principals | project PrincipalFQN, PrincipalDisplayName | parse-where PrincipalFQN with principalType:string \"=\" principalIdentity:string \";\" principalTenant:string | project-away PrincipalFQN | where principalType == \"aadgroup\" | project-away principalType";
                         CheckPrincipals(clientKusto, clientGraph, myTenantId, tenantsNotChecked, distributionGroups, queryForPrincipals);
                     }
 
